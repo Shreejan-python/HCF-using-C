@@ -1,5 +1,23 @@
 #include <stdio.h>
 
+int hcf(int a, int b){
+    if (a==0)
+    {
+        return b;
+    }
+    else if (b==0)
+    {
+        return a;
+    }
+    else
+    {
+        return hcf(b, a % b);
+    }
+    
+    
+    
+}
+
 int main()
 {
     int n;
@@ -9,28 +27,9 @@ int main()
     int m;
     printf("Enter a number : ");
     scanf("%d", &m);
+    
 
-    int mn;
-    int hcf;
-    if (n<m)
-    {
-        mn = n;
-    }
-    else{
-        mn = m;
-
-    }
-
-    for (int i = 1; i < (mn + 1); i++)
-    {
-        if (mn%i == 0)
-        {
-            hcf = i;
-        }
-        
-    }
-
-    printf("The HCF of %d and %d is %d", n, m, hcf);
+    printf("The HCF of %d and %d is %d", n, m, hcf(n, m));
     
     
 
